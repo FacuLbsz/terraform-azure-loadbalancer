@@ -1,0 +1,8 @@
+docker tag spring-docker-seed terraformazureloadbalanceracr.azurecr.io/spring-docker-seed
+docker push terraformazureloadbalanceracr.azurecr.io/spring-docker-seed
+docker run --rm -t -d -p 8080:8080 terraformazureloadbalanceracr.azurecr.io/spring-docker-seed
+
+sudo apt-get update 
+sudo apt-get install docker.io -y
+sudo docker login --username terraformAzureLoadbalancerAcr --password <password> terraformazureloadbalanceracr.azurecr.io
+sudo docker run --rm -t -d -p 8080:8080 terraformazureloadbalanceracr.azurecr.io/spring-docker-seed
